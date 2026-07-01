@@ -1,0 +1,12 @@
+/executive
+  X-Robots-Tag: noindex, nofollow, noarchive
+/executive/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/athlete
+  X-Robots-Tag: noindex, nofollow, noarchive
+/athlete/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/founder
+  X-Robots-Tag: noindex, nofollow, noarchive
+/founder/*
+  X-Robots-Tag: noindex, nofollow, noarchive

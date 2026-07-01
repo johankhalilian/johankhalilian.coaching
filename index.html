@@ -224,17 +224,11 @@
   form button:hover{background:var(--red-deep)}
 
   /* ---------- JOURNAL SIGNUP (merged into Journal — was the standalone newsletter section) ---------- */
-  .j-signup{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:1fr;background:var(--ink);color:var(--cream);overflow:hidden}
-  @media(min-width:760px){.j-signup{grid-template-columns:1.15fr 1fr}}
-  .j-signup .copy{padding:clamp(30px,4.5vw,50px);display:flex;flex-direction:column;justify-content:center;gap:14px}
-  .j-signup .copy .tag{color:rgba(246,241,231,.6)}
-  .j-signup .copy .tag .st{color:var(--celeste)}
-  .j-signup .copy h3{margin:0;font-family:"Fraunces";font-style:italic;font-weight:900;font-size:clamp(26px,3.2vw,36px);line-height:1.06;color:var(--cream)}
-  .j-signup .copy p{margin:0;color:#cfc9ba;font-size:15px;line-height:1.62;max-width:42ch}
-  .j-signup .panel{background:var(--cream);color:var(--ink);padding:clamp(24px,3.4vw,34px);display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(0,0,0,.06)}
-  @media(max-width:759px){.j-signup .panel{border-left:0;border-top:1px solid var(--hair)}}
-  .j-signup .panel .lbl{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-  .j-signup .panel .embed{border:1px solid var(--hair);background:var(--cream)}
+  .j-signup{margin:clamp(30px,4.5vw,44px) auto 0;max-width:480px;background:var(--cream);color:var(--ink);
+    padding:clamp(24px,3.4vw,32px);text-align:center;border:1px solid var(--hair)}
+  .j-signup .lbl{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .j-signup .embed{border:1px solid var(--hair);background:var(--cream)}
+  .journal{padding-bottom:clamp(30px,4.5vw,52px)}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:var(--cream);padding:clamp(40px,6vw,64px) 0 34px}
@@ -311,8 +305,9 @@
 <section class="guide tex" id="about">
   <div class="wrap guide-grid">
     <!-- EDIT: portrait of Jo — vertical 4:5. swap /assets/johan-portrait.jpg -->
-    <div class="tile ph-ink guide-photo rise" data-fig="Fig. 02">
-      <div class="cap"><span>Johan Martinez-Khalilian</span><span>SWAP → portrait.jpg</span></div>
+    <div class="tile guide-photo rise" data-fig="Fig. 02">
+      <img src="/assets/johan-portrait.jpg" alt="Johan Martinez-Khalilian">
+      <div class="cap"><span>Johan Martinez-Khalilian</span></div>
     </div>
     <div class="rise">
       <span class="tag"><span class="st">★</span> The Guide — Humboldt Park, Chicago</span>
@@ -400,16 +395,9 @@
       </a>
     </div>
     <div class="j-signup rise">
-      <div class="copy">
-        <span class="tag"><span class="st">★</span> Stay Connected</span>
-        <h3>Letters from the future.</h3>
-        <p>The same voice as the podcast, in writing. Insights, essays, and the occasional letter from the future, straight to your inbox.</p>
-      </div>
-      <div class="panel">
-        <p class="lbl">Subscribe on Substack</p>
-        <div class="embed">
-          <iframe src="https://johanmartinezkhalilian.substack.com/embed" width="100%" height="150" style="background:var(--cream)" frameborder="0" scrolling="no" title="Subscribe to Johan's newsletter"></iframe>
-        </div>
+      <p class="lbl">Subscribe on Substack — Letters from the Future</p>
+      <div class="embed">
+        <iframe src="https://johanmartinezkhalilian.substack.com/embed" width="100%" height="150" style="background:var(--cream)" frameborder="0" scrolling="no" title="Subscribe to Johan's newsletter"></iframe>
       </div>
     </div>
   </div>
@@ -439,7 +427,7 @@
       <p class="fine">Response within 2 business days<br>Executives · Athletes · Founders</p>
     </div>
     <!-- EDIT: replace action with your real Formspree endpoint → https://formspree.io/f/XXXXXXXX -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="rise">
+    <form action="https://formspree.io/f/maqgpvjn" method="POST" class="rise">
       <div class="row">
         <div><label for="name">Name</label><input id="name" type="text" name="name" required></div>
         <div><label for="email">Email</label><input id="email" type="email" name="email" required></div>
