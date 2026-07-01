@@ -19,7 +19,7 @@
     /* off-white / off-black / Puerto Rican flag celeste + red */
     --bone:#F4EEE2; --bone-2:#F9F4EA; --ink:#141310;
     --celeste:#5EC5EA; --celeste-deep:#1585AE;   /* deep variant = readable accent on light */
-    --red:#EE2E24; --red-deep:#B31B14;
+    --red:#C33427; --red-deep:#8C2318;            /* softened toward the flag's true brick-red */
     --cream:#F6F1E7; --muted:#8A857A; --hair:#E0D9CC;
     /* system tokens */
     --sp: clamp(64px,10vw,128px);
@@ -88,7 +88,7 @@
   .tile img{width:100%;height:100%;object-fit:cover;filter:var(--duo);transition:filter 1s ease,transform 1.4s cubic-bezier(.2,.8,.2,1)}
   .tile:hover img{filter:none;transform:scale(1.04)}
   .tile.ph-sky{background:linear-gradient(150deg,#6fd0f2,#0c3648 82%)}
-  .tile.ph-red{background:linear-gradient(150deg,#f2483d,#7a120c 82%)}
+  .tile.ph-red{background:linear-gradient(150deg,#d24a3a,#5c1710 82%)}
   .tile.ph-ink{background:linear-gradient(150deg,#33322c,#131310 82%)}
   .tile::after{content:attr(data-fig);position:absolute;top:12px;left:12px;z-index:2;font-family:"Space Mono",monospace;
     font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72)}
@@ -223,11 +223,18 @@
   form button{align-self:flex-start;margin-top:6px;background:var(--ink);color:var(--cream)}
   form button:hover{background:var(--red-deep)}
 
-  /* ---------- NEWSLETTER strip ---------- */
-  .news{text-align:center;border-bottom:1px solid var(--hair);background:var(--bone)}
-  .news h2{margin:12px 0 12px;font-family:"Archivo";font-weight:800;font-size:clamp(24px,3.4vw,40px);text-transform:uppercase;letter-spacing:-.01em}
-  .news p{margin:0 auto 26px;color:#3a392f;font-size:15.5px;line-height:1.6;max-width:44ch}
-  .news .embed{max-width:480px;margin:0 auto;border:1px solid var(--hair)}
+  /* ---------- JOURNAL SIGNUP (merged into Journal — was the standalone newsletter section) ---------- */
+  .j-signup{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:1fr;background:var(--ink);color:var(--cream);overflow:hidden}
+  @media(min-width:760px){.j-signup{grid-template-columns:1.15fr 1fr}}
+  .j-signup .copy{padding:clamp(30px,4.5vw,50px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+  .j-signup .copy .tag{color:rgba(246,241,231,.6)}
+  .j-signup .copy .tag .st{color:var(--celeste)}
+  .j-signup .copy h3{margin:0;font-family:"Fraunces";font-style:italic;font-weight:900;font-size:clamp(26px,3.2vw,36px);line-height:1.06;color:var(--cream)}
+  .j-signup .copy p{margin:0;color:#cfc9ba;font-size:15px;line-height:1.62;max-width:42ch}
+  .j-signup .panel{background:var(--cream);color:var(--ink);padding:clamp(24px,3.4vw,34px);display:flex;flex-direction:column;justify-content:center;border-left:1px solid rgba(0,0,0,.06)}
+  @media(max-width:759px){.j-signup .panel{border-left:0;border-top:1px solid var(--hair)}}
+  .j-signup .panel .lbl{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .j-signup .panel .embed{border:1px solid var(--hair);background:var(--cream)}
 
   /* ---------- footer ---------- */
   footer{background:var(--ink);color:var(--cream);padding:clamp(40px,6vw,64px) 0 34px}
@@ -250,7 +257,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <a class="brand" href="/">
-    <svg class="mark" viewBox="0 0 26 20" aria-hidden="true"><polygon points="1,1 1,19 17,10" fill="#5EC5EA" stroke="#141310" stroke-width="0.7" stroke-linejoin="round"/><text x="5.6" y="13.2" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#F6F1E7" text-anchor="middle">★</text></svg>
+    <svg class="mark" viewBox="0 0 26 20" aria-hidden="true"><polygon points="1,1 1,19 17,10" fill="#5EC5EA"/><text x="6.3" y="10.2" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#F6F1E7" text-anchor="middle" dominant-baseline="central">★</text></svg>
     <span class="wordmark">Johan Martinez-Khalilian</span>
   </a>
   <nav class="cats">
@@ -274,7 +281,7 @@
     <div>
       <h1>
         <span class="l1">Leaders are</span>
-        <span class="l2"><span class="made">made</span>.</span>
+        <span class="l2"><span class="made">made.</span></span>
       </h1>
       <div class="hero-lower">
         <p>How you perform is downstream of who you're being.</p>
@@ -291,7 +298,7 @@
 <section class="premise">
   <div class="wrap">
     <span class="tag rise"><span class="st">★</span> The Premise</span>
-    <p class="lead rise">You don't rise to the level of your goals. You perform from the level of <span class="serif-i">who you're being</span>.</p>
+    <p class="lead rise">You don't rise to the level of your goals.<br>You perform from the level of <span class="serif-i">who you're being.</span></p>
     <div class="problem-body rise">
       <p>If you're here, you're already good. You've put in the work. And still, there's a gap between where you are and where you know you could be.</p>
       <p>Most people try to close it with more effort and more grind. But the ceiling usually isn't a skill problem. <strong>It's a way-of-being problem.</strong> Fear, pressure, and old stories quietly shape everything you do.</p>
@@ -309,7 +316,7 @@
     </div>
     <div class="rise">
       <span class="tag"><span class="st">★</span> The Guide — Humboldt Park, Chicago</span>
-      <h2>You have a heroic journey to forge. Johan has walked people through theirs for years.</h2>
+      <h2>You have a heroic journey to forge.<br>Johan has walked people through theirs for years.</h2>
       <div class="body">
         <p>Johan Martinez-Khalilian is an internationally recognized speaker and coach. A product of Humboldt Park, he pairs Midwest grit with a deep love of creativity and honest conversation.</p>
         <p>His work isn't motivation and it isn't therapy. It's ontological coaching, rooted in a simple truth: who you're being, in your language, your emotions, and your body, is what generates your results. Change that, and the results follow.</p>
@@ -358,7 +365,7 @@
   <div class="wrap">
     <div class="head rise">
       <span class="tag"><span class="st">★</span> The Coaching</span>
-      <h2>Different rooms. <span class="serif-i">Same work</span> underneath.</h2>
+      <h2>Different rooms.<br><span class="serif-i">Same work.</span></h2>
     </div>
     <div class="who-list">
       <div class="who-row rise"><span class="no">01</span><h3>Executives</h3><p>For leaders carrying the weight of a team, a number, and everyone watching how they carry it. The higher you climb, the fewer people tell you the truth.</p></div>
@@ -373,7 +380,7 @@
 <section class="journal" id="journal">
   <div class="wrap">
     <div class="head rise">
-      <h2>From the <span class="serif-i">journal</span>.</h2>
+      <h2>From the <span class="serif-i">journal.</span></h2>
       <a href="https://johanmartinezkhalilian.substack.com" target="_blank" rel="noopener">Read all on Substack →</a>
     </div>
     <!-- Populated live from /journal (Cloudflare Function -> Substack RSS + cover image).
@@ -391,6 +398,19 @@
         <div class="tile ph-ink art" data-fig="Journal"><div class="cap"><span>Substack</span><span>live</span></div></div>
         <div class="pbody"><span class="date">Recent</span><h3>Notes, essays, and letters from the future.</h3><span class="read">Read on Substack →</span></div>
       </a>
+    </div>
+    <div class="j-signup rise">
+      <div class="copy">
+        <span class="tag"><span class="st">★</span> Stay Connected</span>
+        <h3>Letters from the future.</h3>
+        <p>The same voice as the podcast, in writing. Insights, essays, and the occasional letter from the future, straight to your inbox.</p>
+      </div>
+      <div class="panel">
+        <p class="lbl">Subscribe on Substack</p>
+        <div class="embed">
+          <iframe src="https://johanmartinezkhalilian.substack.com/embed" width="100%" height="150" style="background:var(--cream)" frameborder="0" scrolling="no" title="Subscribe to Johan's newsletter"></iframe>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -443,24 +463,12 @@
   </div>
 </section>
 
-<!-- ============ NEWSLETTER strip ============ -->
-<section class="news">
-  <div class="wrap">
-    <span class="tag" style="justify-content:center"><span class="st">★</span> Stay Connected</span>
-    <h2>Letters from the future</h2>
-    <p>Exclusive insights, tips, and the occasional letter from the future, straight to your inbox.</p>
-    <div class="embed">
-      <iframe src="https://johanmartinezkhalilian.substack.com/embed" width="100%" height="150" style="background:var(--bone)" frameborder="0" scrolling="no" title="Subscribe to Johan's newsletter"></iframe>
-    </div>
-  </div>
-</section>
-
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
     <div class="foot-top">
       <div class="big">
-        <svg class="mark" viewBox="0 0 26 20" width="30" height="23" aria-hidden="true"><polygon points="1,1 1,19 17,10" fill="#5EC5EA" stroke="#141310" stroke-width="0.7" stroke-linejoin="round"/><text x="5.6" y="13.2" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#F6F1E7" text-anchor="middle">★</text></svg>
+        <svg class="mark" viewBox="0 0 26 20" width="30" height="23" aria-hidden="true"><polygon points="1,1 1,19 17,10" fill="#5EC5EA"/><text x="6.3" y="10.2" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#F6F1E7" text-anchor="middle" dominant-baseline="central">★</text></svg>
         Leaders are made.
       </div>
       <div class="foot-links">
